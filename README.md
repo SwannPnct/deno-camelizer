@@ -8,5 +8,5 @@ Simple deno module to deep-camelize objects' keys
   // whatever data
  }
  
- camelizeKeys(obj)
+ const camelizedObj = camelizeKeys(obj)
  ```
