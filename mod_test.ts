@@ -23,3 +23,23 @@ Deno.test('basic test', () => {
 	};
 	assertEquals(camelizeKeys(actual), expected);
 });
+
+Deno.test('null values', () => {
+	const actual = {
+		errors: [{
+			message: 'Permission denied, wrong credentials',
+			field: null,
+			help: null,
+		}],
+	};
+
+	const expected = {
+		errors: [{
+			message: 'Permission denied, wrong credentials',
+			field: null,
+			help: null,
+		}],
+	};
+
+	assertEquals(camelizeKeys(actual), expected);
+});

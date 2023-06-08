@@ -4,7 +4,7 @@ import { camelCase } from './deps.ts';
 type AnyObject = Record<string, any>;
 
 export const camelizeKeys = (object: AnyObject): AnyObject => {
-	if (typeof object !== 'object') return object;
+	if (typeof object !== 'object' || object === null) return object;
 	let camelizedObject: any;
 	if (Array.isArray(object)) {
 		camelizedObject = object.map((item) => camelizeKeys(item));
